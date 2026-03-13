@@ -5,8 +5,8 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.klef.fsad</groupId>
-    <artifactId>hibernateexam</artifactId>
+    <groupId>com.klef.fsad.exam</groupId>
+    <artifactId>libraryCRUD</artifactId>
     <version>1.0</version>
 
     <dependencies>
@@ -20,7 +20,7 @@
 
         <!-- MySQL Connector -->
         <dependency>
-            <groupId>mysql</groupId>
+            <groupId>mySql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>8.0.28</version>
         </dependency>
