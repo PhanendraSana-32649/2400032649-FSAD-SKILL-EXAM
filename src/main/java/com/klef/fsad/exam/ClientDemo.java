@@ -1,12 +1,17 @@
 package com.klef.fsad.exam;
 
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
 public class ClientDemo 
 {
 	public static void main(String[] args) 
 	{
-		sessionFactory sf = new sessionFactory();
-		Session session = new session();
-		Transaction t = new transaction();
+		SessionFactory sf = new Configuration().configure().buildSessionFactory();
+		Session session = sf.openSession();
+		Transaction t = session.beginTransaction();
 		
 		//Insert Operations 
 		Library library = new Library();
@@ -15,9 +20,13 @@ public class ClientDemo
 		library.setDate("01/01/2014");
 		library.setStatus("True");
 		
+		session.save(library);
+		
 		//delete operation
 		session.delete(library);
 		
+		t.commit();
+		session.close();
+		sf.close();
 	}
-
 }
